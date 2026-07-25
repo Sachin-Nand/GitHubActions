@@ -33,12 +33,11 @@ jobs:
             
             # This command requests a single hierarchical layer using the delimiter
             # and filters for names ending in a trailing slash.
-            FOLDERS=$(az storage blob list \
-              --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT }}" \
-              --container-name "customers" \
-              --auth-mode login \
-              --delimiter '/' \              
-              --output json)
+            FOLDERS=$(az storage fs file list \
+                    --account-name <storage-account> \
+                    --file-system <filesystem> \
+                    --auth-mode login              
+                    --o table)
               
             echo "Available folders:"
-            echo "$FOLDERS" | jq .
+            echo "$FOLDERS"
