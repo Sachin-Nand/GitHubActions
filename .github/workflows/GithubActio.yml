@@ -36,7 +36,7 @@ jobs:
             FOLDERS=$(az storage fs file list \
                     --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT }}" \
                     --file-system customers \
-                    --auth-mode login              
+                    --auth-mode login \             
                     --output table)
               
             echo "Available folders:"
