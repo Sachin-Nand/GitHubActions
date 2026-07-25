@@ -38,7 +38,7 @@ jobs:
             --file-system customers \
             --auth-mode login \
             --query "[?isDirectory].name" \
-            --output tsv)
+            --output table)
               
             echo "Available folders:"
             echo "$FOLDERS"
