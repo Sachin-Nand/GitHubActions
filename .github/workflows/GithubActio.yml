@@ -37,8 +37,7 @@ jobs:
               --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT }}" \
               --container-name "customers" \
               --auth-mode login \
-              --delimiter '/' \
-              --query "[].name | [?ends_with(@, '/生')]" \
+              --delimiter '/' \              
               --output json)
               
             echo "Available folders:"
