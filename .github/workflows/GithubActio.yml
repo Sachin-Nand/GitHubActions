@@ -29,11 +29,9 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            echo "Fetching all virtual directories..."
+            echo "Fetching all directories..."
             
-            # This command requests a single hierarchical layer using the delimiter
-            # and filters for names ending in a trailing slash.
-            FOLDERS=$(az storage fs file list \
+              FOLDERS=$(az storage fs file list \
             --account-name "${{ secrets.AZURE_STORAGE_ACCOUNT }}" \
             --file-system customers \
             --auth-mode login \
